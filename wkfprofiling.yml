@@ -1,0 +1,41 @@
+
+prefix: "data_wkf"
+
+workload:
+  filenames:
+    - "adaptivemd.__main__.log"
+
+  timestamps:
+    - Job:
+      - "Initializing Project"
+      - "Project opening"
+      - "Project event added"
+      - "Project event done"
+      - "Project closed"
+
+task:
+  folder: "workers"
+
+  filenames:
+    - "adaptivemd.worker.*"
+
+  timestamps:
+    - Executor:
+      - "Worker.* says hello"
+      - "Worker.* stops"
+
+    - Worker:
+      - "Recieved dblocation"
+      - "good-bye"
+
+    - Task:
+      - "queued a task"
+      - "task succeeded"
+
+  # DONT ChANGE TOP 2 ENTRIES!
+  errors:
+    - Connection: #DONT CHANGE
+      - "ServerSelectionTimeoutError"
+      - "AutoReconnect"
+    - Traceback: #DONT CHANGE
+      - "Traceback"
