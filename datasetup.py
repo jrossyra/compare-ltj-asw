@@ -74,6 +74,19 @@ workflows = dict(
       "projectname": 'cgn-as2',
       "first"     : 60,# first traj idx for these workloads
     },
+
+    umi_Ca_4 = {
+      "timestep"  : 0.020,# of saved frames, unit: nanosecond
+      "topfile"   : "../../../%s"%top_protein,
+      "filename"  : "trajs/*/protein.dcd",
+      "selection" : protein,
+      "database"  : 'mongo',
+        
+      "directory" : "./data/traj/cgn-4",
+      "n_trajs"   : 48,
+      "projectname": 'cgn-as2',
+      "first"     : 60,# first traj idx for these workloads
+    },
 )
 
 datasetup = {
